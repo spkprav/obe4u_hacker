@@ -22,11 +22,18 @@ class Link
         rlinks << "http://forum.obe4u.com/posting.php?mode=reply&f=#{blink}&t=#{hlink.split('t=')[1].split('&p')[0]}"
       end
       @topic_links << rlinks
-      puts 'praveenfinaltime'
     end
+  end
+
+  def login
+  end
+
+  def post_everywhere
   end
 end
 
 links = [10, 1, 2, 3, 4, 8, 11, 9, 7, 6, 5]
 link = Link.new(links)
 link.get
+link.login
+link.post_everywhere
