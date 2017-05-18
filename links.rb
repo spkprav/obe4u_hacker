@@ -69,46 +69,6 @@ class Link
       puts 'done'
     end
   end
-
-
-  # username: praveenfinaltime
-  # def login
-  #   puts "#{@topic_links.size} topics found"
-  #   puts "Trying to login"
-  #   login_link = "http://forum.obe4u.com/ucp.php?mode=login"
-  #   login_page = @agent.get(login_link)
-  #   logged = @agent.post('./ucp.php?mode=login', { 'username' => 'spreadingtruth', 'password' => '123456789', 'redirect' => 'index.php', 'sid' => login_page.forms[1].sid, 'login' => 'Login' })
-  #   if logged.body.include?('Logout [ spreadingtruth ]')
-  #     puts 'Logged in successfully'
-  #     return true
-  #   else
-  #     return false
-  #   end
-  # end
-
-  # def post_everywhere
-  #   puts 'Spreading the truth'
-  #   @topic_links.each do |tlink|
-  #     plink = "http://forum.obe4u.com/viewtopic.php?f=#{forum_id}&t=#{topic_id}"
-  #     reply_page = @agent.get(tlink)
-  #     forum_id = tlink.split('&f=')[1].split('&t=')[0]
-  #     topic_id = tlink.split('&t=')[1]
-  #     params = {
-  #       'subject' => 'Spreading that Summerlander is a humiliated kid',
-  #       'message' => '',
-  #       'creation_time' => reply_page.forms[1].creation_time,
-  #       'form_token' => reply_page.forms[1].form_token,
-  #       'topic_cur_post_id' => reply_page.forms[1].topic_cur_post_id,
-  #       'lastclick' => reply_page.forms[1].lastclick,
-  #       'topic_id' => topic_id,
-  #       'forum_id' => forum_id,
-  #       'attach_sig' => '1',
-  #       'post' => 'Submit'
-  #     }
-  #     byebug
-  #     reply_post = @agent.post(tlink, params)
-  #   end
-  # end
 end
 
 link = Link.new
